@@ -1,1 +1,140 @@
-hsjsj
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sector3 Racing</title>
+
+  <!-- Meta -->
+  <meta name="description" content="Sector3 Racing – performance-driven motorsport and sim racing team." />
+  <meta name="theme-color" content="#1b0040" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">Sector3 Racing</div>
+      <nav class="nav">
+        <a href="#team">Team</a>
+        <a href="#racing">Racing</a>
+        <a href="#partners">Partners</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>Precision. Discipline. Execution.</h1>
+        <p class="hero-sub">
+          A performance-focused racing organization operating at the intersection of engineering, data, and competition.
+        </p>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="section">
+      <div class="container">
+        <h2>Team</h2>
+        <p>
+          Sector3 Racing is built around methodical preparation, technical execution, and continuous improvement.
+          We operate with a motorsport-first mindset across both real-world and simulated competition.
+        </p>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Drivers</h3>
+            <ul>
+              <li>Driver Name</li>
+              <li>Driver Name</li>
+              <li>Driver Name</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Operations</h3>
+            <ul>
+              <li>Team Principal</li>
+              <li>Engineering</li>
+              <li>Strategy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Racing -->
+    <section id="racing" class="section alt">
+      <div class="container">
+        <h2>Racing Programs</h2>
+        <div class="grid three">
+          <div class="card">
+            <h3>Sim Racing</h3>
+            <p>Endurance and sprint competition with an emphasis on consistency and racecraft.</p>
+          </div>
+          <div class="card">
+            <h3>Customer Motorsport</h3>
+            <p>Planned participation in accessible entry-level categories.</p>
+          </div>
+          <div class="card">
+            <h3>Development</h3>
+            <p>Driver and systems development through structured testing and review.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section id="partners" class="section">
+      <div class="container">
+        <h2>Partners</h2>
+        <p class="muted">
+          Sector3 Racing collaborates with technical partners and supporters aligned with performance and integrity.
+        </p>
+
+        <div class="grid four partners">
+          <div class="partner">Partner Name</div>
+          <div class="partner">Partner Name</div>
+          <div class="partner">Partner Name</div>
+          <div class="partner">Partner Name</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          Inquiries, partnerships, and media requests:
+        </p>
+        <p class="contact">
+          <a href="mailto:info@sector3racing.com">info@sector3racing.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Sector3 Racing</span>
+      <span class="muted">All rights reserved</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
