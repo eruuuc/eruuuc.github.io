@@ -5,22 +5,24 @@
   --muted: #a0a0b2;
   --accent: #1b0040;
   --border: #242436;
+
+  /* Adobe Fonts */
+  --font-body: "neue-haas-grotesk-text", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: "neue-haas-grotesk-display", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, sans-serif;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-style: normal;
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .container {
@@ -29,11 +31,12 @@ body {
   padding: 0 1.5rem;
 }
 
+/* Header */
 .site-header {
   position: sticky;
   top: 0;
-  background-color: rgba(11, 11, 16, 0.85);
-  backdrop-filter: blur(8px);
+  background-color: rgba(11, 11, 16, 0.86);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   z-index: 100;
 }
@@ -42,123 +45,232 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 64px;
+  height: 68px;
 }
 
 .brand {
-  font-family: Space Grotesk, sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand-logo {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-size: 1.05rem;
 }
 
 .nav a {
   color: var(--muted);
   text-decoration: none;
   margin-left: 1.25rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
-.nav a:hover {
-  color: var(--text);
-}
+.nav a:hover { color: var(--text); }
 
+/* Hero */
 .hero {
-  padding: 6rem 0 5rem;
+  padding: 6.25rem 0 5.25rem;
 }
 
 .hero h1 {
-  font-family: Space Grotesk, sans-serif;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  margin-bottom: 1rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+  margin: 0 0 1rem 0;
 }
 
 .hero-sub {
-  max-width: 640px;
+  max-width: 680px;
   color: var(--muted);
   font-size: 1.05rem;
+  margin: 0 0 2rem 0;
+  font-weight: 300;
 }
 
-.section {
-  padding: 4.5rem 0;
+.hero-cta {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
 }
 
-.section.alt {
-  background-color: var(--bg-alt);
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.05rem;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
 }
+
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-ghost {
+  background: transparent;
+}
+
+/* Sections */
+.section { padding: 4.75rem 0; }
+
+.section.alt { background-color: var(--bg-alt); }
 
 h2 {
-  font-family: Space Grotesk, sans-serif;
-  margin-bottom: 1rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin: 0 0 1rem 0;
+  font-size: 1.7rem;
 }
 
-p {
-  max-width: 720px;
+p { max-width: 760px; margin: 0 0 1rem 0; }
+
+.lede {
+  font-size: 1.05rem;
+  color: var(--text);
 }
 
-.muted {
-  color: var(--muted);
-}
+.muted { color: var(--muted); }
 
+.small { font-size: 0.9rem; }
+
+/* Grids and cards */
 .grid {
   display: grid;
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
-.grid.two {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-.grid.three {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.grid.four {
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-}
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.grid.three { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
 .card {
   background-color: var(--bg);
   border: 1px solid var(--border);
-  padding: 1.5rem;
+  padding: 1.6rem;
 }
 
 .card h3 {
-  margin-top: 0;
-  font-family: Space Grotesk, sans-serif;
+  margin: 0 0 0.85rem 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.15px;
+  font-size: 1.1rem;
 }
+
+.card p { margin: 0; color: var(--muted); }
 
 .card ul {
   padding-left: 1.2rem;
   margin: 0;
-}
-
-.partner {
-  border: 1px dashed var(--border);
-  padding: 1.25rem;
-  text-align: center;
   color: var(--muted);
-  font-size: 0.9rem;
 }
 
-.contact a {
+.card li { margin: 0.35rem 0; }
+
+/* Partners */
+.partners-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.partner-tile,
+.partner-text {
+  border: 1px solid var(--border);
+  background-color: var(--bg);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 92px;
+}
+
+.partner-tile {
+  text-decoration: none;
+}
+
+.partner-tile:hover {
+  border-color: var(--accent);
+}
+
+.partner-tile img {
+  max-width: 150px;
+  max-height: 42px;
+  width: auto;
+  height: auto;
+  opacity: 0.88;
+}
+
+.partner-tile:hover img { opacity: 1; }
+
+.partner-text {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* Contact */
+.contact-block { margin-top: 1.25rem; }
+
+.contact-email {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.15px;
   color: var(--text);
   text-decoration: none;
-  font-weight: 600;
+  border-bottom: 1px solid var(--text);
+  padding-bottom: 2px;
 }
 
-.contact a:hover {
+.contact-email:hover {
   color: var(--accent);
+  border-color: var(--accent);
 }
 
+/* Footer */
 .site-footer {
   border-top: 1px solid var(--border);
-  padding: 1.5rem 0;
-  font-size: 0.85rem;
+  padding: 1.6rem 0;
+  font-size: 0.92rem;
 }
 
 .footer-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-logo {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+/* Mobile nav handling */
+@media (max-width: 640px) {
+  .nav { display: none; }
 }
