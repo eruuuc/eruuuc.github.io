@@ -182,6 +182,49 @@ p { max-width: 760px; margin: 0 0 1rem 0; }
 
 .card li { margin: 0.35rem 0; }
 
+/* Contact layout */
+.contact-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.contact-card {
+  border: 1px solid var(--border);
+  background-color: var(--bg);
+  padding: 1.6rem;
+}
+
+.contact-title {
+  margin: 0 0 0.85rem 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.15px;
+  font-size: 1.1rem;
+}
+
+/* Social chips */
+.social-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.social-chips a {
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.85rem;
+  font-weight: 500;
+}
+
+.social-chips a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* Partners */
 .partners-grid {
   display: grid;
