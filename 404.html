@@ -105,4 +105,65 @@
     </div>
   </main>
 </body>
+
+  <!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <!-- Top logo row -->
+    <div class="footer-top-logos" aria-label="Team and title partner logos">
+      <!-- Sector3 Racing -->
+      <a class="footer-top-logo" href="/" aria-label="Sector3 Racing home">
+        <img src="/assets/logos/sector3-mark.svg" alt="Sector3 Racing logo" />
+      </a>
+
+      <!--
+      Title Partner (future)
+      To enable:
+      1. Upload the SVG to /assets/logos/partners/
+      2. Replace the src below
+      3. Remove these comment tags
+      -->
+      <!--
+      <a class="footer-top-logo" href="/partners/#title-partner" aria-label="Title partner">
+        <img src="/assets/logos/partners/title-partner.svg" alt="Title partner logo" />
+      </a>
+      -->
+
+    </div>
+
+    <!-- Partners strip -->
+    <div class="footer-partners" aria-label="Partners">
+      <a class="footer-partner" href="/partners/#bosch" aria-label="Bosch">
+        <img src="/assets/logos/partners/bosch.svg" alt="Bosch logo" />
+      </a>
+
+      <a class="footer-partner" href="/partners/#hydraulic-systems" aria-label="Hydraulic Systems">
+        <img src="/assets/logos/partners/hydraulic-systems.svg" alt="Hydraulic Systems logo" />
+      </a>
+
+      <a class="footer-partner" href="/partners/#partner-3" aria-label="Partner 3">
+        <img src="/assets/logos/partners/partner-3.svg" alt="Partner 3 logo" />
+      </a>
+
+      <a class="footer-partner" href="/partners/#partner-4" aria-label="Partner 4">
+        <img src="/assets/logos/partners/partner-4.svg" alt="Partner 4 logo" />
+      </a>
+    </div>
+
+    <!-- Legal -->
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        © <span id="year"></span> Sector3 Racing. All rights reserved.
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+  
 </html>
