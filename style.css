@@ -6,6 +6,14 @@
   --accent: #1b0040;
   --border: #242436;
 
+  /* Shape + interaction */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --hover-bg: rgba(255, 255, 255, 0.06);
+  --focus-ring: rgba(255, 255, 255, 0.45);
+
   /* Adobe Fonts */
   --font-body: "neue-haas-grotesk-text", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-display: "neue-haas-grotesk-display", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -35,6 +43,14 @@ body {
   padding: 0 2rem;
 }
 
+/* Global focus visibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
 /* Typography */
 h1, h2, h3 {
   font-family: var(--font-display);
@@ -61,7 +77,15 @@ p {
 
 .small { font-size: 0.9rem; }
 
-/* Buttons */
+/* Sections */
+.section { padding: 4.75rem 0; }
+
+.section.alt { background-color: var(--bg-alt); }
+
+/* =========================================================
+   Buttons
+========================================================= */
+
 .btn {
   display: inline-block;
   padding: 0.85rem 1.05rem;
@@ -69,19 +93,18 @@ p {
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
+  border-radius: var(--radius-md);
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
 .btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  background-color: var(--hover-bg);
+  border-color: var(--text);
+  color: var(--text);
+  transform: translateY(-1px);
 }
 
 .btn-ghost { background: transparent; }
-
-/* Sections */
-.section { padding: 4.75rem 0; }
-
-.section.alt { background-color: var(--bg-alt); }
 
 /* =========================================================
    Header / Navigation
@@ -130,9 +153,15 @@ p {
   margin-left: 1.25rem;
   font-size: 0.95rem;
   font-weight: 400;
+  padding: 0.25rem 0.4rem;
+  border-radius: var(--radius-sm);
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
-.nav a:hover { color: var(--text); }
+.nav a:hover {
+  color: var(--text);
+  background-color: var(--hover-bg);
+}
 
 /* =========================================================
    Hero
@@ -182,6 +211,14 @@ p {
   background-color: var(--bg);
   border: 1px solid var(--border);
   padding: 1.6rem;
+  border-radius: var(--radius-lg);
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.card:hover {
+  background-color: var(--hover-bg);
+  border-color: var(--text);
+  transform: translateY(-1px);
 }
 
 .card h3 {
@@ -205,7 +242,7 @@ p {
    Partners
 ========================================================= */
 
-/* Old tile grid (keep if still used anywhere) */
+/* Old tile grid (keep if used anywhere) */
 .partners-grid {
   display: grid;
   gap: 1.25rem;
@@ -222,11 +259,17 @@ p {
   align-items: center;
   justify-content: center;
   min-height: 92px;
+  border-radius: var(--radius-lg);
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 .partner-tile { text-decoration: none; }
 
-.partner-tile:hover { border-color: var(--accent); }
+.partner-tile:hover {
+  border-color: var(--text);
+  background-color: var(--hover-bg);
+  transform: translateY(-1px);
+}
 
 .partner-tile img {
   max-width: 150px;
@@ -234,9 +277,13 @@ p {
   width: auto;
   height: auto;
   opacity: 0.88;
+  transition: opacity 160ms ease, transform 160ms ease;
 }
 
-.partner-tile:hover img { opacity: 1; }
+.partner-tile:hover img {
+  opacity: 1;
+  transform: scale(1.02);
+}
 
 .partner-text {
   color: var(--muted);
@@ -258,6 +305,7 @@ p {
   justify-content: center;
   text-decoration: none;
   padding: 0.6rem 0.25rem;
+  border-radius: var(--radius-sm);
   transform: translateZ(0);
 }
 
@@ -267,7 +315,6 @@ p {
   width: auto;
   height: auto;
 
-  /* Default muted gray look */
   opacity: 0.7;
   filter: grayscale(1) brightness(1.15);
   transform: scale(1);
@@ -280,11 +327,6 @@ p {
   opacity: 1;
   filter: grayscale(1) brightness(2);
   transform: scale(1.03);
-}
-
-.partner-logo:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
 }
 
 /* =========================================================
@@ -302,6 +344,14 @@ p {
   border: 1px solid var(--border);
   background-color: var(--bg);
   padding: 1.6rem;
+  border-radius: var(--radius-lg);
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.contact-card:hover {
+  background-color: var(--hover-bg);
+  border-color: var(--text);
+  transform: translateY(-1px);
 }
 
 .contact-title {
@@ -320,13 +370,14 @@ p {
   letter-spacing: 0.15px;
   color: var(--text);
   text-decoration: none;
-  border-bottom: 1px solid var(--text);
+  border-bottom: 1px solid rgba(230, 230, 235, 0.6);
   padding-bottom: 2px;
+  transition: color 160ms ease, border-color 160ms ease;
 }
 
 .contact-email:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--text);
+  border-color: var(--text);
 }
 
 /* Social icon buttons (Contact section) */
@@ -341,21 +392,26 @@ p {
   width: 46px;
   height: 46px;
   border: 1px solid var(--border);
-  background-color: var(--bg);
+  background-color: transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
-.social-icon:hover { border-color: var(--accent); }
+.social-icon:hover {
+  background-color: var(--hover-bg);
+  border-color: var(--text);
+  transform: translateY(-1px);
+}
 
 .social-icon img {
   width: 20px;
   height: 20px;
   display: block;
 
-  /* Default muted look */
   opacity: 0.72;
   filter: grayscale(1) brightness(1.15);
   transform: scale(1);
@@ -368,11 +424,6 @@ p {
   opacity: 1;
   filter: grayscale(1) brightness(2);
   transform: scale(1.06);
-}
-
-.social-icon:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
 }
 
 /* Legacy social chips (keep if used anywhere) */
@@ -389,11 +440,14 @@ p {
   border: 1px solid var(--border);
   padding: 0.6rem 0.85rem;
   font-weight: 500;
+  border-radius: var(--radius-md);
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
 .social-chips a:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  background-color: var(--hover-bg);
+  border-color: var(--text);
+  color: var(--text);
 }
 
 /* =========================================================
@@ -432,4 +486,5 @@ p {
 
 @media (max-width: 640px) {
   .nav { display: none; }
+  .container { padding: 0 1.25rem; }
 }
