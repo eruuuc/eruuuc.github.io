@@ -440,17 +440,18 @@ p {
 
 .footer-partner img {
   display: block;
+
+  width: 100%;
   max-width: 240px;
-  max-height: 58px;
-  width: auto;
   height: auto;
+  max-height: 58px;
 
   opacity: 0.9;
-  filter: none;
   transform: scale(1);
 
   transition: opacity 160ms ease, transform 160ms ease;
 }
+
 
 .footer-partner:hover img,
 .footer-partner:focus-visible img {
