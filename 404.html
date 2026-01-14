@@ -13,18 +13,52 @@
 
 <body>
 
-<main class="section">
-  <div class="container">
-    <h1>404</h1>
-    <p class="lede">
-      The link you followed may be broken or the page may have been removed.
-    </p>
-    <p class="muted">
-      Return to the homepage or contact us if you believe this is an error.
-    </p>
-    <a class="btn" href="/">Return home</a>
-  </div>
-</main>
+  <main class="section">
+    <div class="container">
+      <div class="error-content">
+        <div class="error-code">404</div>
+
+        <p class="error-sub">
+          The link you followed may be broken or the page may have been removed.
+        </p>
+
+        <ul class="error-list">
+          <li>Double-check the URL for typos.</li>
+          <li>Return to the homepage or use the links below to navigate.</li>
+          <li>
+            If you believe this is an error,
+            <a href="/contact/">contact us</a>
+            and we’ll help you find what you’re looking for.
+          </li>
+        </ul>
+
+        <div class="error-cta">
+          <a class="btn btn-ghost error-home" href="/">Return to homepage</a>
+        </div>
+
+        <div class="error-sitemap" aria-label="Site map">
+          <div class="error-sitemap-title">Popular pages</div>
+          <div class="error-sitemap-links">
+            <a href="/team/">Team</a>
+            <a href="/cars/">Cars</a>
+            <a href="/racing/">Racing</a>
+            <a href="/partners/">Partners</a>
+            <a href="/contact/">Contact</a>
+            <a href="https://shop.sector3racing.com" target="_blank" rel="noopener noreferrer">Shop</a>
+          </div>
+        </div>
+
+        <div class="error-telemetry" data-page="404" data-referrer="">
+          <span class="muted small">Ref: <span id="err-ref"></span></span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const ref = Math.random().toString(36).slice(2, 10).toUpperCase();
+    document.getElementById("err-ref").textContent = ref;
+  </script>
 
 <footer class="site-footer">
   <div class="container footer-inner">
