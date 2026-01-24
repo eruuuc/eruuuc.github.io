@@ -673,13 +673,6 @@ body.nav-open {
   background-color: var(--hover-bg);
 }
 
-/* Visual separator inside the info list (before legal links) */
-.footer-list-sep {
-  margin: 1rem 0;
-  height: 1px;
-  background: var(--border);
-}
-
 /* Mobile stacking */
 @media (max-width: 640px) {
   .footer-links {
