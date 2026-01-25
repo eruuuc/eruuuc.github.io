@@ -618,6 +618,21 @@ body.nav-open {
     padding: 0 0.5rem;
 }
 
+/* Footer partners: prevent crowding at mid widths */
+@media (max-width: 1100px) {
+  .footer-partners {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 2rem 2.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-partners {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
 /* Small screens: slightly reduce heights so nothing feels oversized */
 @media (max-width: 640px) {
     .footer-partner img {
