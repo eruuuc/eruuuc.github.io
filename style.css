@@ -120,24 +120,46 @@ p {
   top: 0;
   z-index: 100;
 
-  background-color: var(--header-bg-top);
-  border-bottom: 1px solid transparent;
-  backdrop-filter: none;
+  background-color: rgba(10, 10, 15, 0.2); /* was variable */
+  backdrop-filter: blur(8px); /* ADD THIS */
+  -webkit-backdrop-filter: blur(8px);
 
-  transition: background-color 180ms ease, border-color 180ms ease, backdrop-filter 180ms ease;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+
+  transition: 
+    background-color 180ms ease,
+    border-color 180ms ease,
+    backdrop-filter 180ms ease;
 }
 
 .site-header.is-scrolled {
-  background-color: var(--header-bg-scrolled);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(var(--header-blur));
+  background-color: rgba(10, 10, 15, 0.75); /* stronger */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0)
+  );
+
+  opacity: 0.4;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px;
+  height: 76px;
   gap: 1rem;
 }
 
@@ -154,7 +176,7 @@ p {
 
 .brand-wordmark {
   display: block;
-  height: 28px;
+  height: 30px;
   width: auto;
 
   /* Prevent the wordmark from squeezing the hamburger */
@@ -169,7 +191,7 @@ p {
 
 /* Desktop nav */
 .nav a {
-  color: var(--muted);
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
   margin-left: 0;
   font-size: 0.95rem;
@@ -179,9 +201,13 @@ p {
   transition: background-color 160ms ease, color 160ms ease;
 }
 
+.site-header.is-scrolled .nav a {
+  color: rgba(255,255,255,0.85);
+}
+
 .nav a:hover {
-  color: var(--text);
-  background-color: var(--hover-bg);
+  color: #ffffff;
+  background-color: rgba(255,255,255,0.06);
 }
 
 /* Mobile menu button (hidden on desktop) */
